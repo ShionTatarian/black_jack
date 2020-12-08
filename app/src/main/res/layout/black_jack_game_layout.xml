@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:onClick="onNewGameClick"
+        android:text="New"
+        />
+
+    <TextView
+        android:id="@+id/dealers_hand_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="Dealers hand"
+        android:textColor="@color/black"
+        />
+
+    <include
+        android:id="@+id/bj_dealers_hand_layout"
+        layout="@layout/player_hand_values_layout"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_below="@id/dealers_hand_title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        />
+
+    <RelativeLayout
+        android:id="@+id/bj_players_hand_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="32dp"
+        >
+
+        <LinearLayout
+            android:id="@+id/bj_hand_size_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="60dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            >
+
+            <include
+                android:id="@+id/bj_hand_2_layout"
+                layout="@layout/player_hand_values_layout"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:visibility="gone"
+                />
+
+            <include
+                android:id="@+id/bj_hand_1_layout"
+                layout="@layout/player_hand_values_layout"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                />
+
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/bj_hit_button"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_below="@id/bj_hand_size_layout"
+            android:layout_centerHorizontal="true"
+            android:text="hit"
+            />
+
+        <Button
+            android:id="@+id/bj_stand_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/bj_hand_size_layout"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="16dp"
+            android:layout_toLeftOf="@id/bj_hit_button"
+            android:text="stand"
+            />
+
+        <Button
+            android:id="@+id/bj_insurance_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/bj_hand_size_layout"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@id/bj_hit_button"
+            android:text="insurance"
+            android:textSize="12dp"
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/bj_hit_button"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal"
+            >
+
+            <Button
+                android:id="@+id/bj_split_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:text="Split"
+                />
+
+            <Button
+                android:id="@+id/bj_double_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="double"
+                />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/bj_result_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bj_players_hand_layout"
+        android:layout_below="@id/bj_dealers_hand_layout"
+        android:layout_margin="8dp"
+        android:gravity="center"
+        android:padding="8dp"
+        android:textColor="@color/green"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        tools:text="Result"
+        />
+
+</RelativeLayout>
